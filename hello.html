@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>hello React 02.03</title>
+    <title>hello React 02.04</title>
     <meta charset="utf-8">
   </head>
   <body>
@@ -11,8 +11,16 @@
     <script src="react/build/react.js"></script>
     <script src="react/build/react-dom.js"></script>
     <script>
+      var Component = React.createClass( {
+        render : function () {
+          return React.DOM.span(null, " Meu nome é : " + this.props.name);
+        }
+      });
+
       ReactDOM.render(
-        React.createElement("span", null, "Ola"),
+        React.createElement(Component, {
+          name: "Claudio",
+        }),
         document.getElementById("app")
       );
     </script>
