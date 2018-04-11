@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>hello React 02.04</title>
+    <title>hello React 02.05</title>
     <meta charset="utf-8">
   </head>
   <body>
@@ -12,7 +12,10 @@
     <script src="react/build/react-dom.js"></script>
     <script>
       var Component = React.createClass( {
-        render : function () {
+        propTypes : {
+          name : React.PropTypes.string.isRequired,
+        },
+        render: function () {
           return React.DOM.span(null, " Meu nome é : " + this.props.name);
         }
       });
