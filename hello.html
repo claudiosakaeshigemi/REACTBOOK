@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Capitulo 02.07 </title>
+    <title> Capitulo 02.08 </title>
     <meta charset="utf-8">
     <style>
       body, textarea {
@@ -19,7 +19,7 @@
       var TextAreaCounter = React.createClass({
 
         propTypes: {
-          text: React.PropTypes.string,
+          defaultValue: React.PropTypes.string,
         },
 
         getDefaultProps: function() {
@@ -29,7 +29,9 @@
         },
 
         getInitialState: function() {
-          return { text: this.props.text, };
+          return {
+            text: this.props.defaultValue,
+          };
         },
 
         _textChange: function(ev) {
@@ -51,7 +53,7 @@
 
       ReactDOM.render(
         React.createElement(TextAreaCounter, {
-          text: "Digite aqui",
+          defaultValue: "Digite aqui: ",
         }),
         document.getElementById("app")
       );
