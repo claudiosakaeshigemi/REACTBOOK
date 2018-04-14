@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Capitulo 02.08 </title>
+    <title> Capitulo 02.09 </title>
     <meta charset="utf-8">
     <style>
       body, textarea {
@@ -20,12 +20,6 @@
 
         propTypes: {
           defaultValue: React.PropTypes.string,
-        },
-
-        getDefaultProps: function() {
-          return {
-            text: '',
-          };
         },
 
         getInitialState: function() {
@@ -51,9 +45,9 @@
         }
       });
 
-      ReactDOM.render(
+      var myTextAreaCounter = ReactDOM.render(
         React.createElement(TextAreaCounter, {
-          defaultValue: "Digite aqui: ",
+          defaultValue: "Claudio",
         }),
         document.getElementById("app")
       );
