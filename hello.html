@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Capitulo 02.11 </title>
+    <title> Capitulo 02.12 </title>
     <meta charset="utf-8">
     <style>
       body, textarea {
@@ -22,21 +22,12 @@
           console.log(methodName,args);
         },
 
-        componentWillUpdate: function() {
-          this._log( 'componentWillUpdate', arguments);
-        },
-        componentDidUpdate: function(){
-          console._log('componentDidUpdate', arguments);
-        },
-        componentWillMount: function() {
-          console._log('componentWillMount',arguments);
-        },
-        componentDidmount: function() {
-          console._log('componentDidmount', arguments);
-        },
-
-        componentWillUnmount: function(){
-          console._log('componentWillUnmount', arguments);
+    
+        componentDidUpdate: function(oldProps, oldState) {
+          if (this.state.text.length > 3) {
+            console.log('Este texto é muito longo!');
+            this.replaceState(oldState);
+          }
         },
 
         propTypes: {
@@ -53,11 +44,6 @@
           this.setState({
             text: ev.target.value,
           });
-        },
-
-        componentWillReceiveProps: function(newProps) {
-          this.setState( {
-            text: newProps.defaultValue,  } );
         },
 
         render: function() {
