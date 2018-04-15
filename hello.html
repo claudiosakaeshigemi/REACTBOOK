@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Capitulo 02.16  </title>
-    <meta charset="utf-8">
+    <title> Capitulo 02.17 </title>
     <style>
       body, textarea {
         font-family: Courier;
@@ -13,9 +12,10 @@
     <div id="app">
       <!-- my app renders here -->
     </div>
-    <script src="react/build/react.js"></script>
+    <script src="react/build/react-with-addons.js"></script>
     <script src="react/build/react-dom.js"></script>
     <script>
+
       var Counter = React.createClass({
         name: 'Counter',
         
@@ -33,8 +33,6 @@
 
       var TextAreaCounter = React.createClass({
         name: 'TextAreaCounter',
-        
-        // mixins: [logMixin],
 
         propTypes: {
           defaultValue: React.PropTypes.string,
@@ -79,6 +77,5 @@
         document.getElementById("app")
       );
     </script>
-  </body>
   </body>
 </html>
