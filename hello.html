@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Capitulo 02.15  </title>
+    <title> Capitulo 02.16  </title>
     <meta charset="utf-8">
     <style>
       body, textarea {
@@ -28,11 +28,19 @@
       };
 
       var Counter = React.createClass({
-        //name: 'Counter',
-        mixins: [logMixin],
+        name: 'Counter',
+        
+        // mixins: [logMixin],
+        
         propTypes: {
           count: React.PropTypes.number.isRequired,
         },
+        
+        shouldComponentUpdate: function(nextProps, nextState) {
+          // console.log(this.name + '::shouldComponentUpdate()');
+          return nextProps.count !== this.props.count;
+        },
+        
         render: function() {
           console.log(this.name + '::render()');
           return React.DOM.span(null, this.props.count);
@@ -41,7 +49,8 @@
 
       var TextAreaCounter = React.createClass({
         name: 'TextAreaCounter',
-        //mixins: [logMixin],
+        
+        // mixins: [logMixin],
 
         propTypes: {
           defaultValue: React.PropTypes.string,
@@ -60,6 +69,7 @@
         },
 
         render: function() {
+          console.log(this.name + '::render()');
           var counter = null;
           if (this.state.text.length > 0) {
             counter = React.DOM.h3(null, 
